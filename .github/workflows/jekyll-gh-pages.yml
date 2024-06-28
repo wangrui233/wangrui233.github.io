@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [20]
 
     steps:
       - name: Pull Code
@@ -18,13 +18,13 @@ jobs:
         uses: actions/setup-node@v3 # 使用现成的GitHub Actions配置`Node.JS`环境
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: "pnpm"
 
       - name: Install Dependencies # 安装依赖
-        run: npm install
+        run: pnpm install
 
       - name: Build Project
-        run: npm run build # 打包项目，换成你的前端项目打包的命令
+        run: pnpm build # 打包项目，换成你的前端项目打包的命令
 
       - name: Deploy Github Pages
         uses: crazy-max/ghaction-github-pages@v3 # 使用现成的action自动生成commit自动提交
