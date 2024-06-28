@@ -1,0 +1,36 @@
+name: Demo Build CI
+on: # 触发条件：当main分支被推送时会自动触发这个自动化流程
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Pull Code
+        uses: actions/checkout@v3 # 使用现成的GitHub Actions拉取代码
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3 # 使用现成的GitHub Actions配置`Node.JS`环境
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Install Dependencies # 安装依赖
+        run: npm install
+
+      - name: Build Project
+        run: npm run build # 打包项目，换成你的前端项目打包的命令
+
+      - name: Deploy Github Pages
+        uses: crazy-max/ghaction-github-pages@v3 # 使用现成的action自动生成commit自动提交
+        with:
+          build_dir: dist # 前面构建出来的静态文件目录
+          commit_message: "deploy: Deployed by Github Actions" # 提交信息，可选
+          jekyll: false # 禁用jekyll可以防止一些特殊命名的文件无法正常访问
+        env:
+          GITHUB_TOKEN: ${{ secrets.push }} # 必须有，是创建提交的身份凭证
