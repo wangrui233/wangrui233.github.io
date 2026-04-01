@@ -1,0 +1,15 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="url(#paint0_linear)"/>
+  <circle cx="980" cy="242" r="220" fill="#FFE0B4" fill-opacity="0.18"/>
+  <circle cx="250" cy="1084" r="300" fill="#FFD0D5" fill-opacity="0.16"/>
+  <path d="M603.5 792C671.3 725.2 781 724.833 849.5 790.5C918 856.167 920.5 963 853 1030.5L603.5 1280L354 1030.5C286.5 963 289 856.167 357.5 790.5C426 724.833 535.7 725.2 603.5 792Z" fill="#FFF7ED" fill-opacity="0.2"/>
+  <text x="100" y="1256" fill="#FFF8F0" font-family="Georgia, serif" font-size="102" letter-spacing="3">Bloom Together</text>
+  <text x="109" y="1340" fill="#FFF8F0" fill-opacity="0.72" font-family="Arial, sans-serif" font-size="34" letter-spacing="8">CHANGE TO YOUR FAVORITE PORTRAIT</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="1200" y1="0" x2="0" y2="1500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#40202A"/>
+      <stop offset="0.55" stop-color="#B66D7D"/>
+      <stop offset="1" stop-color="#E8BA8C"/>
+    </linearGradient>
+  </defs>
+</svg>
